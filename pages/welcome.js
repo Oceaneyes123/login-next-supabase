@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { supabase } from '../lib/supabaseClient'
+import SignOutButton from '../components/SignOutButton'
 
 export default function Welcome() {
   const router = useRouter()
@@ -39,7 +40,8 @@ export default function Welcome() {
         <h2 className="text-3xl font-bold">Hi {name} 👋</h2>
         <p className="mt-2 text-slate-600">Welcome back — this is your personalized page.</p>
         <div className="mt-6 flex justify-center gap-4">
-          <button onClick={signOut} className="px-4 py-2 rounded border">Sign out</button>
+          <a href="/dashboard" className="px-4 py-2 rounded border">Go to dashboard</a>
+          <SignOutButton redirectTo="/" />
         </div>
       </div>
     </div>

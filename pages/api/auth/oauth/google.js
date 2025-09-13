@@ -5,7 +5,9 @@ export default async function handler(req, res) {
   if (req.method !== 'POST' && req.method !== 'GET') return res.status(405).end()
   try {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-    const redirectToAfter = siteUrl + '/dashboard'
+  // Redirect into a client-side callback page which can read the URL fragment
+  // and POST the tokens to a server endpoint that will set HTTP-only cookies.
+  const redirectToAfter = siteUrl + '/oauth/callback'
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: { redirectTo: redirectToAfter },
