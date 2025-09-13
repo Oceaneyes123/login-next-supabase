@@ -16,9 +16,7 @@ export default function LoginPage() {
         </form>
 
         <div className="mt-4">
-          <form action="/api/auth/oauth/google" method="post">
-            <button type="submit" className="w-full py-2 px-4 border rounded">Continue with Google</button>
-          </form>
+          <a href="/api/auth/oauth/google" className="w-full block text-center py-2 px-4 border rounded">Continue with Google</a>
         </div>
       </div>
     </div>
