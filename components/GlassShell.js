@@ -11,11 +11,22 @@ export default function GlassShell({ title, subtitle, children }) {
         .orb-2 { width: 150px; height: 150px; background: linear-gradient(45deg, #a8edea, #fed6e3); top: 60%; right: 15%; }
         .orb-3 { width: 120px; height: 120px; background: linear-gradient(45deg, #ffecd2, #fcb69f); bottom: 20%; left: 20%; }
         @keyframes float { 0%,100% { transform: translateY(0px) scale(1);} 33% { transform: translateY(-20px) scale(1.1);} 66% { transform: translateY(10px) scale(0.9);} }
-        .neon-streak { position: absolute; height: 2px; background: linear-gradient(90deg, transparent 0%, #ff0080 50%, transparent 100%); animation: streak 6s linear infinite; opacity: 0.7; }
+  .neon-streak { position: absolute; height: 2px; background: linear-gradient(90deg, transparent 0%, #ff0080 50%, transparent 100%); animation: streak 6s linear infinite; opacity: 0.7; }
         .streak-1 { width: 300px; top: 25%; left: -300px; }
         .streak-2 { width: 200px; top: 70%; right: -200px; background: linear-gradient(90deg, transparent 0%, #00ffff 50%, transparent 100%); }
         @keyframes streak { 0% { transform: translateX(0);} 100% { transform: translateX(calc(100vw + 300px)); } }
-  .login-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); padding: 48px 40px; width: 420px; margin: 24px auto; position: relative; overflow: hidden; }
+    /* lightweight utility classes (in case Tailwind utilities are not loaded) */
+    .flex { display:flex; }
+    .justify-center { justify-content:center; }
+    .items-center { align-items:center; }
+    .h-full { height:100%; }
+    .relative { position:relative; }
+    .z-2 { z-index: 2; }
+    .z-10 { z-index: 10; }
+    .text-center { text-align: center; }
+    .mb-10 { margin-bottom: 2.5rem; }
+
+    .login-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); padding: 48px 40px; width: 420px; margin: 24px auto; position: relative; overflow: hidden; }
         .login-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 50%); pointer-events: none; }
         .login-title { font-size: 32px; font-weight: 200; color: rgba(255,255,255,0.95); margin-bottom: 8px; letter-spacing: -0.5px; text-shadow: 0 0 20px rgba(255,255,255,0.1);} 
         .login-subtitle { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); }
