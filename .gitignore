@@ -1,0 +1,6 @@
+login-next-supabase/
+node_modules/
+.next/
+.DS_Store
+.env
+npm-debug.log
